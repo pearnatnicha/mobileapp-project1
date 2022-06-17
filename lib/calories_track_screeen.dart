@@ -75,7 +75,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
+                      ElevatedButton( //add calories intake
                         onPressed: () {
                           setState(() {
                             cal_in += int.parse(inputControler_consume.text);
@@ -98,7 +98,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                         ),
                       ),
                       SizedBox(width: 15),
-                      ElevatedButton(
+                      ElevatedButton( //reset calories intake
                         onPressed: () {
                           setState(() {
                             cal_in = 0;
@@ -155,7 +155,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
+                      ElevatedButton( // add burned calories
                         onPressed: () {
                           setState(() {
                             cal_out += int.parse(inputControler_burn.text);
@@ -178,7 +178,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                         ),
                       ),
                       SizedBox(width: 15),
-                      ElevatedButton(
+                      ElevatedButton( //reset calories burned
                         onPressed: () {
                           setState(() {
                             cal_out = 0;
@@ -235,7 +235,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
+                      ElevatedButton( //add steps took
                         onPressed: () {
                           setState(() {
                             step += int.parse(inputControler_step.text);
@@ -258,7 +258,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                         ),
                       ),
                       SizedBox(width: 15),
-                      ElevatedButton(
+                      ElevatedButton( // reset steps took
                         onPressed: () {
                           setState(() {
                             step = 0;
@@ -292,7 +292,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                       ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            if (widget.gender == Gender.male) {
+                            if (widget.gender == Gender.male) { //calculate balance from bmr and calories in&out
                               total_out = (step * 0.4).round() + cal_out +
                                   88 +
                                   (13 * widget.weight) +
@@ -305,7 +305,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                                   (3 * widget.height) -
                                   (4 * widget.age);
                             }
-                            if (total_out >= cal_in) {
+                            if (total_out >= cal_in) { // then set the balance information
                               _textSummary.add("Balanced");
                               _textSummary.add(
                                   "You are on the right track. Keep going with this routine to stay healthy");
@@ -319,7 +319,7 @@ class _CaloriesTrackScreenState extends State<CaloriesTrackScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return SummaryScreen(
+                                return SummaryScreen( //navigate to summary screen
                                     cal_in: cal_in,
                                     cal_out: total_out,
                                     summary: _textSummary);

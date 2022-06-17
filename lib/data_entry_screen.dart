@@ -116,7 +116,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
                           });
                           // inputControler_consume.clear();
                         },
-                        child: Text(
+                        child: Text( // save weight, height, and age data
                           "Save",
                           style: TextStyle(
                             fontSize: 20.0,
@@ -137,7 +137,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
                           inputControler_age.clear();
                         },
                         child: Text(
-                          "Reset",
+                          "Reset", // reset weight, height, and age data
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -156,7 +156,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
                 children: <Widget>[
                   SizedBox(height: 15),
                   Text(
-                    'Choose your gender:',
+                    'Choose your gender:', // choice for user to choose their gender (male/female)
                     style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
@@ -220,7 +220,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return CaloriesTrackScreen(
+                            return CaloriesTrackScreen( //navigate to calories tracker screen
                                 weight: weight,
                                 height: height,
                                 age: age,

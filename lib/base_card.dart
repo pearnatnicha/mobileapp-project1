@@ -1,3 +1,5 @@
+// source: Base card from Ajarn's bill_splitting
+
 import 'package:flutter/material.dart';
 
 class BaseCard extends StatelessWidget {

@@ -10,7 +10,7 @@ class SummaryScreen extends StatelessWidget {
   final int cal_out;
   final List<String> summary;
 
-  Color get_color(String level) {
+  Color get_color(String level) { // check that the result is balanced or not
     if (level == "Balanced"){
       return kBalance;
     }
@@ -102,7 +102,7 @@ class SummaryScreen extends StatelessWidget {
 
 
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.push( //navigate to new data collecting screen
                       context,
                       MaterialPageRoute(
                         builder: (context) {
